@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+#particles-js{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( 45deg, #010758, #42047e, #490d61, #f1515e);
+    background-size: 500% 500%;
+    animation: gradient 20s ease infinite;
+    z-index: -1;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    padding: 1rem 10%;
+    display: flex;
+    gap: 5%;
+    flex-direction: column;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    font-family: "Ga Maamli", sans-serif;
+    gap: 0.5%;
+    color: #fff;
+}
+
+.logo img{
+    width: 2.5%;
+}
+
+
+.logo span{
+    color: #ff2963;
+}
+
+.main{
+    width: 100%;
+    height: 80%;
+    margin: 0 2%;
+    display: flex;
+    gap: 3%;
+    padding: 2%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.left{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    gap: 2%;
+    flex-direction: column;
+}
+
+.left .options{
+    width: 100%;
+    display: flex;
+    gap: 2%;
+    padding: 1.5%;
+    background: rgba(255, 255, 255, 0.129);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-group{
+    display: flex;
+    gap: 10%;
+}
+
+.btn{
+    color: white;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.063);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.4rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.options select{
+    width: 50%;
+    color: white;
+    /* background: #6d2d9e; */
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem;
+    border: 0;
+    outline: 0;
+    border-radius: 35px;
+    cursor: pointer;
+
+}
+
+.options option{
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: black;
+}
+
+
+hr{
+    border: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.input-section{
+    height: 100%;
+    color: white;
+    padding: 2%;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.129);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    outline: 0;
+    resize: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-section::placeholder{
+    font-size: 1.05rem;
+    color: #ddddddc2;
+}
+
+.chars{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    color: white;
+    background: rgba(255, 255, 255, 0.129);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.clear-text{
+    background: rgba(255, 255, 255, 0.063);
+    border-radius: 35px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.4rem;
+    cursor: pointer;
+}
+
+.clear-text:hover{
+    background: #ff2963;
+}
+
+.right{
+    width: 33%;
+}
+
+.settings{
+    width: 100%;
+    height: 95%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    padding: 3% 4%;
+    background: rgba(255, 255, 255, 0.129);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.settings hr{
+    height: 2px;
+    border: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+
+.heading{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+.control{
+    font-size: 1.05rem;
+}
+
+.slider-control{
+    display: flex;
+    align-items: end;
+    gap: 5%;
+}
+
+.slider-control input{
+    width: 70%;
+    accent-color: #ff2963;
+}
+
+.slider-control p{
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.063);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 0.2rem 0.4rem;
+}
+
+.convert-btn{
+    color: white;
+    font-size: 1.1rem;
+    background-color: #ff2963;
+    display: flex;
+    gap: 3%;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    padding: 3%;
+    cursor: pointer;
+}
+
+.convert-btn:hover{
+    background-color: #ff2962d8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+@media screen and (max-width:1200px){
+    .main{
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .left{
+        height: 50%;
+        width: 100%;
+    }
+
+    .right{
+        height: 50%;
+        width: 100%;
+    }
+}
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
