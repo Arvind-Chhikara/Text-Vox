@@ -7,57 +7,49 @@ const redoButton = document.querySelector(".fa-rotate-right");
 
 let history = [];
 let redoStack = [];
-let currentContent = textField.value;
 
-
-
-// Adding undo and red0 functionality
+// Save the initial state
 document.addEventListener('DOMContentLoaded', (event) => {
+    saveHistory();
+});
 
-    function saveHistory() {
-        if (history.length === 0 || history[history.length - 1] !== currentContent) {
-            history.push(currentContent);
-        }
+function saveHistory() {
+    if (history.length === 0 || history[history.length - 1] !== textField.value) {
+        history.push(textField.value);
     }
+}
 
-    textField.addEventListener('click', () => {
-        currentContent = textField.value;
+textField.addEventListener('input', () => {
+    saveHistory();
+    redoStack = []; // Clear redo stack on new input
+});
+
+// Undo button 
+undoButton.addEventListener('click', () => {
+    if (history.length > 1) {
+        redoStack.push(history.pop());
+        textField.value = history[history.length - 1];
+    }
+});
+
+// Redo button 
+redoButton.addEventListener('click', () => {
+    if (redoStack.length > 0) {
+        textField.value = redoStack.pop();
         saveHistory();
-        redoStack = [];
-    });
-
-    // Undo button 
-    undoButton.addEventListener('click', () => {
-        if(history.length > 0){
-            redoStack.push(currentContent);
-            currentContent = history.pop();
-            textField.value = currentContent;
-            saveHistory();
-        }
-    });
-
-    // Redo button 
-    redoButton.addEventListener('click', () => {
-        if(redoStack.length > 0){
-            history.push(currentContent);
-            currentContent = redoStack.pop();
-            textField.value = currentContent;
-            saveHistory();
-        }
-    });
-
-
+    }
+});
 
 
 
     // Clear text button 
     document.querySelector(".clear-text").addEventListener('click', () => {
-        redoStack.push(currentContent);
+        // redoStack.push(currentContent);
         currentContent = "";
         textField.value = currentContent;
         saveHistory();
     });
-});
+
 
 
 
