@@ -105,14 +105,17 @@ body{
 .options select{
     width: 50%;
     color: white;
-    /* background: #6d2d9e; */
     background: rgba(255, 255, 255, 0.2);
     padding: 0.2rem;
     border: 0;
     outline: 0;
     border-radius: 35px;
     cursor: pointer;
+}
 
+.options select:focus{
+    color: white;
+    background: #ff2963;
 }
 
 .options option{
