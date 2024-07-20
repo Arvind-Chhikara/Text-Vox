@@ -273,13 +273,21 @@ hr{
         height: 50%;
         width: 100%;
     }
+
+    .logo img{
+        width: 5%;
+    }
 }
 
-@media screen and (max-width:700px){
+@media screen and (max-width:850px){
 
     .wrapper{
         gap: 1%;
         padding: 1rem 3%;
+    }
+
+    .convert-btn{
+        width: 40%;
     }
 
 }
